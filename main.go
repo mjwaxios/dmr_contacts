@@ -23,7 +23,13 @@ func readCsvFile(filePath string) [][]string {
 	return records
 }
 
+func MakeContacts(records [][]string) {
+	for index, value := range records {
+		fmt.Printf("\"%v\",\"%v\",\"%v\",\"%v\",\"%v\"\n", index, value[11], value[9], value[10], "None")
+	}
+}
+
 func main() {
 	records := readCsvFile("channel.csv")
-	fmt.Println(records)
+	MakeContacts(records)
 }
